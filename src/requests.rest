@@ -1,0 +1,71 @@
+### Demo Server
+
+### Registration
+POST https://lambda-mud-test.herokuapp.com/api/registration/
+Content-Type: Application/json
+
+{
+  "username":"testuser",
+  "password1":"testpassword",
+  "password2":"testpassword"
+}
+
+### Login
+POST https://lambda-mud-test.herokuapp.com/api/login/
+Content-Type: Application/json
+
+{
+  "username":"testuser",
+  "password":"testpassword"
+}
+
+### Initialize
+GET https://lambda-mud-test.herokuapp.com/api/adv/init/
+Authorization: Token 626a1a9d5ab38fe08f0bab5d5b75f13fb36a12d0
+
+### Move
+POST https://lambda-mud-test.herokuapp.com/api/adv/move/
+Authorization: Token 626a1a9d5ab38fe08f0bab5d5b75f13fb36a12d0
+Content-Type: Application/json
+
+{
+  "direction":"n"
+}
+
+### Say
+
+### Localhost Settings ###
+
+### Registration
+POST http://localhost:8000/api/registration/
+Content-Type: Application/json
+
+{
+  "username":"testuser",
+  "password1":"testpassword",
+  "password2":"testpassword"
+}
+
+### Login
+POST http://localhost:8000/api/login/
+Content-Type: Application/json
+
+{
+  "username":"testuser",
+  "password":"testpassword"
+}
+
+### Initialize
+GET http://localhost:8000/api/adv/init/
+Authorization: Token 626a1a9d5ab38fe08f0bab5d5b75f13fb36a12d0
+
+### Move
+POST http://localhost:8000/api/adv/move/
+Authorization: Token 626a1a9d5ab38fe08f0bab5d5b75f13fb36a12d0
+Content-Type: Application/json
+
+{
+  "direction":"n"
+}
+
+### Say
