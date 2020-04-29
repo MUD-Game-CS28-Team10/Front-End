@@ -1,6 +1,6 @@
 import axioswithauth from '../utils/axioswithauth';
-import axios from 'axios';
-import API_URL from '../utils/apiUrl';
+// import axios from 'axios';
+// import API_URL from '../utils/apiUrl';
 
 export const LOGIN_START = 'LOGIN_START';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
