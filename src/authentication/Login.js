@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { logIn } from '../actions'
+import { logIn } from '../actions/loginActions'
 
 const LogInForm = (props) => {
   const [user, setUser] = useState({
