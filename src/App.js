@@ -1,12 +1,14 @@
 import React from 'react';
-import './App.css';
+import { Route } from 'react-router-dom';
+
+import Login from './authentication/Login'
+import Registration from './authentication/Registration'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>This is our new, spiffy app.</h1>
-      </header>
+      <Route exact path="/login" component={Login} />
+      <Route exact path="/register" component={Registration} />
     </div>
   );
 }
