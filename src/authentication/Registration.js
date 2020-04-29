@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { register } from '../actions'
+import { register } from '../actions';
 
 const LogInForm = (props) => {
   const [newUser, setNewUser] = useState({
     username: '',
     password1: '',
-    password2: ''
+    password2: '',
   });
-
 
   const handleChange = (e) => {
     setNewUser({
@@ -19,23 +18,22 @@ const LogInForm = (props) => {
     e.target.focus();
   };
 
-
-const handleSubmit = (e) => {
-  e.preventDefault();
-  props.register(newUser);
-  //reset form to blank below
-  setNewUser({
-    username: '',
-    password1: '',
-    password2: ''
-  });
-}
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    props.register(newUser);
+    //reset form to blank below
+    setNewUser({
+      username: '',
+      password1: '',
+      password2: '',
+    });
+  };
 
   return (
     <div className="login">
       <div className="login-body">
         <div className="img-container">
-          <img src="#" />
+          <img src="src/assets/cave.jpg" />
         </div>
         <div className="form-container">
           <h1>Register for the Game!</h1>
@@ -72,9 +70,7 @@ const handleSubmit = (e) => {
                 value={newUser.password2}
                 required
               />
-              <button type="submit" >
-                Register
-              </button>
+              <button type="submit">Register</button>
             </fieldset>
             <div className="login">
               <p>Need to Login?</p>
@@ -89,10 +85,10 @@ const handleSubmit = (e) => {
   );
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    state: state
-  }
-}
+    state: state,
+  };
+};
 
 export default connect(mapStateToProps, { register })(LogInForm);

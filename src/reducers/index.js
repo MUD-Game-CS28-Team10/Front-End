@@ -23,14 +23,12 @@ export const reducer = ( state = initialState, action ) =>
       return {
         ...state,
         isLoading: true,
-        error: ''
       }     
     case LOGIN_SUCCESS:
       return {
         ...state,
         loggedInUsername: action.payload,
         isLoading: false,
-        error: ''
       }
     case LOGIN_FAILURE:
       return {
@@ -42,14 +40,12 @@ export const reducer = ( state = initialState, action ) =>
       return {
         ...state,
         isLoading: true,
-        error: ''
       }     
     case REGISTER_SUCCESS:
       return {
         ...state,
         loggedInUsername: action.payload,
         isLoading: false,
-        error: ''
       }
     case REGISTER_FAILURE:
       return {

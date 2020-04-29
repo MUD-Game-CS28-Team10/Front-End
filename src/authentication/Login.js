@@ -33,7 +33,7 @@ const handleSubmit = (e) => {
     <div className="login">
       <div className="login-body">
         <div className="img-container">
-          <img src="#" />
+          <img src={require('../assets/cave.jpg')} />
         </div>
         <div className="form-container">
           <h1>Welcome Back!</h1>
