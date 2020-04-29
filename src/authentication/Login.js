@@ -32,9 +32,9 @@ const handleSubmit = (e) => {
   return (
     <div className="login">
       <div className="login-body">
-        <div className="img-container">
+        {/* <div className="img-container">
           <img src={require('../assets/cave.jpg')} />
-        </div>
+        </div> */}
         <div className="form-container">
           <h1>Welcome Back!</h1>
           <form onSubmit={handleSubmit} method="POST">
