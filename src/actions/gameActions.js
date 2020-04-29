@@ -15,7 +15,7 @@ export const initiateGame = () => {
         dispatch({ type: INIT_SUCCESS, payload: res.data });
       })
       .catch((err) => {
-        dispatch({ type: INIT_FAILURE, payload: `Init Failed` });
+        dispatch({ type: INIT_FAILURE, payload: err });
       });
   };
 };

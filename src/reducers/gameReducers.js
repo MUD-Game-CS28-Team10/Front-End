@@ -2,7 +2,7 @@ import {
   INIT_START,
   INIT_SUCCESS,
   INIT_FAILURE,
-} from '../actions';
+} from '../actions/gameActions';
 
 const initialState = {
   data: [],

@@ -21,7 +21,8 @@ const LogInForm = (props) => {
 
 const handleSubmit = (e) => {
   e.preventDefault();
-  props.logIn(user, props.history);
+  props.logIn(user);
+  
   //reset form to blank below
   setUser({
     username: '',

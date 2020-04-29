@@ -5,6 +5,7 @@ import {
 } from '../actions';
 
 const initialState = {
+  loggedIn: false,
   isLoading: false,
   error: '',
 };
@@ -14,17 +15,19 @@ export const registrationReducer = (state = initialState, action) => {
     case REGISTER_START:
       return {
         ...state,
+        loggedIn: false,
         isLoading: true,
       };
     case REGISTER_SUCCESS:
       return {
         ...state,
-        loggedInUsername: action.payload,
+        loggedIn: true,
         isLoading: false,
       };
     case REGISTER_FAILURE:
       return {
         ...state,
+        loggedIn: false,
         isLoading: false,
         error: action.payload,
       };
