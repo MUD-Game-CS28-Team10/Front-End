@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { logIn } from '../actions'
+import { logIn } from '../actions/loginActions'
 
 const LogInForm = (props) => {
   const [user, setUser] = useState({
@@ -21,7 +21,8 @@ const LogInForm = (props) => {
 
 const handleSubmit = (e) => {
   e.preventDefault();
-  props.logIn(user, props.history);
+  props.logIn(user);
+  
   //reset form to blank below
   setUser({
     username: '',
@@ -32,9 +33,9 @@ const handleSubmit = (e) => {
   return (
     <div className="login">
       <div className="login-body">
-        <div className="img-container">
+        {/* <div className="img-container">
           <img src={require('../assets/cave.jpg')} />
-        </div>
+        </div> */}
         <div className="form-container">
           <h1>Welcome Back!</h1>
           <form onSubmit={handleSubmit} method="POST">
