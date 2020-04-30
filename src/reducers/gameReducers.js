@@ -11,6 +11,7 @@ import {
 } from '../actions/gameActions';
 
 const initialState = {
+  newRoomData: {},
   initData: {},
   isLoading: false,
   error: '',
@@ -60,7 +61,7 @@ export const gameReducer = (state = initialState, action) => {
     case MOVE_SUCCESS:
       return {
         ...state,
-        data: action.payload,
+        newRoomData: action.payload,
         isLoading: false,
       };
     case MOVE_FAILURE:
