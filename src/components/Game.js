@@ -8,6 +8,7 @@ import RoomInfo from './RoomInfo';
 import Map from './Map';
 import PlayerList from './PlayerList';
 import CommandLine from './CommandLine';
+import JoyStick from './JoyStick';
 
 const Game = props => {
 
@@ -30,13 +31,16 @@ const Game = props => {
             roomDesc={props.initData.description}
           />
           <Map
-            currentRoomNum={props.initData.curr_room}
-            currentX={props.initData.x_coord}
-            currentY={props.initData.y_coord} 
+            initRoomNum={props.initData.curr_room}
+            initX={props.initData.x_coord}
+            initY={props.initData.y_coord} 
           />
           <PlayerList playersArray={props.initData.players}/>
         </div>
+        <div className="bottom-row">
+        <JoyStick />
         <CommandLine />
+        </div>
       </div>
     </div>
   );

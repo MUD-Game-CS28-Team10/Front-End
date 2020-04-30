@@ -2,7 +2,7 @@ import React from 'react';
 
 const Map = (props) => {
 
-  const { currentRoomNum, currentX, currentY } = props;
+  const { initRoomNum, initX, initY } = props;
 
   return (
     <div className="map">
