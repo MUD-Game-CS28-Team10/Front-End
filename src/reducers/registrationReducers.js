@@ -1,13 +1,9 @@
-import {
-  REGISTER_START,
-  REGISTER_SUCCESS,
-  REGISTER_FAILURE,
-} from '../actions';
+import { REGISTER_START, REGISTER_SUCCESS, REGISTER_FAILURE } from '../actions/registrationActions';
 
 const initialState = {
   loggedIn: false,
   isLoading: false,
-  error: '',
+  error: ''
 };
 
 export const registrationReducer = (state = initialState, action) => {
@@ -16,20 +12,20 @@ export const registrationReducer = (state = initialState, action) => {
       return {
         ...state,
         loggedIn: false,
-        isLoading: true,
+        isLoading: true
       };
     case REGISTER_SUCCESS:
       return {
         ...state,
         loggedIn: true,
-        isLoading: false,
+        isLoading: false
       };
     case REGISTER_FAILURE:
       return {
         ...state,
         loggedIn: false,
         isLoading: false,
-        error: action.payload,
+        error: action.payload
       };
     default:
       return state;
