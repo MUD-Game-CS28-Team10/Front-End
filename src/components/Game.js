@@ -14,17 +14,16 @@ const Game = props => {
 
   useEffect(() => {
     props.initiateGame();
-  }, []);
+  }, [props.newRoomData]);
 
   return (
     <div className="game">
       <div className="header">
         <h1>Lambda-MUD</h1>
-        <NavBar />
+        <NavBar player={props.initData.name}/>
       </div>
 
       <div className="main-content">
-        <h1>The intrepid adventurer: {props.initData.name}</h1>
         <div className="main-row">
           <RoomInfo
             roomName={props.initData.title}
@@ -48,7 +47,8 @@ const Game = props => {
 
 const mapStateToProps = state => {
   return {
-    initData: state.gameReducer.initData
+    initData: state.gameReducer.initData,
+    newRoomData: state.gameReducer.newRoomData
   };
 };
 
