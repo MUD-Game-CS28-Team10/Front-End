@@ -13,6 +13,7 @@ import {
 const initialState = {
   newRoomData: {},
   initData: {},
+  mapData: {},
   isLoading: false,
   error: '',
 };
@@ -44,7 +45,7 @@ export const gameReducer = (state = initialState, action) => {
     case MAP_SUCCESS:
       return {
         ...state,
-        data: action.payload,
+        mapData: action.payload,
         isLoading: false,
       };
     case MAP_FAILURE:
