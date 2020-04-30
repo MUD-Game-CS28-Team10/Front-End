@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { logIn } from '../actions/loginActions'
+import { logIn } from '../actions/loginActions';
 
 const LogInForm = (props) => {
+  console.log('LOGIN FORM PROPS', props);
   const [user, setUser] = useState({
     username: '',
     password: '',
   });
-
 
   const handleChange = (e) => {
     setUser({
@@ -18,17 +18,15 @@ const LogInForm = (props) => {
     e.target.focus();
   };
 
-
-const handleSubmit = (e) => {
-  e.preventDefault();
-  props.logIn(user);
-  
-  //reset form to blank below
-  setUser({
-    username: '',
-    password: '',
-  });
-}
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    props.logIn(user, props.history);
+    // reset form to blank below
+    setUser({
+      username: '',
+      password: '',
+    });
+  };
 
   return (
     <div className="login">
@@ -60,9 +58,7 @@ const handleSubmit = (e) => {
                 value={user.password}
                 required
               />
-              <button type="submit" >
-                Sign in
-              </button>
+              <button type="submit">Sign in</button>
             </fieldset>
             <div className="register">
               <p>Don't have an account?</p>
@@ -77,10 +73,11 @@ const handleSubmit = (e) => {
   );
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    state: state
-  }
-}
+    loggedIn: state.loginReducer.loggedIn,
+    isLoading: state.loginReducer.isLoading,
+  };
+};
 
 export default connect(mapStateToProps, { logIn })(LogInForm);

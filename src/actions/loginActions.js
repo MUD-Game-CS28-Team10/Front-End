@@ -8,6 +8,7 @@ export const LOGIN_FAILURE = 'LOGIN_FAILURE';
 // export const LOGOUT_FAILURE = 'LOGOUT_FAILURE';
 
 export const logIn = (user, history) => {
+
   return (dispatch) => {
     dispatch({ type: LOGIN_START });
 
@@ -17,6 +18,7 @@ export const logIn = (user, history) => {
         console.log('LOGIN POST RESPONSE', res);
         localStorage.setItem('token', res.data.key);
         dispatch({ type: LOGIN_SUCCESS, payload: res.data });
+        history.push('/game');
       })
       .catch((err) => {
         dispatch({ type: LOGIN_FAILURE, payload: err });

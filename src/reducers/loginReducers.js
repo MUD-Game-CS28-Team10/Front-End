@@ -5,7 +5,7 @@ import {
   // LOGOUT_START,
   // LOGOUT_SUCCESS,
   // LOGOUT_FAILURE
-} from '../actions';
+} from '../actions/loginActions';
 
 const initialState = {
   loggedIn: false,

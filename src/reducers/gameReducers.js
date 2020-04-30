@@ -16,7 +16,7 @@ const initialState = {
   error: '',
 };
 
-export const initReducer = (state = initialState, action) => {
+export const gameReducer = (state = initialState, action) => {
   switch (action.type) {
     case INIT_START:
       return {
@@ -74,4 +74,4 @@ export const initReducer = (state = initialState, action) => {
   }
 };
 
-export default initReducer;
+export default gameReducer;

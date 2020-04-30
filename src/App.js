@@ -11,7 +11,7 @@ import './index.scss';
 function App() {
   return (
     <div className="App">
-      <Route exact path="/login" component={Login} />
+      <Route exact path="/" component={Login} />
       <Route exact path="/register" component={Registration} />
       <PrivateRoute exact path="/game" component={Game} />
     </div>
