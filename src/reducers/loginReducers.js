@@ -10,7 +10,7 @@ import {
 const initialState = {
   loggedIn: false,
   isLoading: false,
-  error: '',
+  error: ''
 };
 
 export const loginReducer = (state = initialState, action) => {
@@ -19,20 +19,20 @@ export const loginReducer = (state = initialState, action) => {
       return {
         ...state,
         loggedIn: false,
-        isLoading: true,
+        isLoading: true
       };
     case LOGIN_SUCCESS:
       return {
         ...state,
         loggedIn: true,
-        isLoading: false,
+        isLoading: false
       };
     case LOGIN_FAILURE:
       return {
         ...state,
         loggedIn: false,
         isLoading: false,
-        error: action.payload
+        error: action.payload,
       };
     // case LOGOUT_START:
     //   return {

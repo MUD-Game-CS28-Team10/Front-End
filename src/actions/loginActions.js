@@ -12,7 +12,7 @@ export const logIn = (user, history) => {
     dispatch({ type: LOGIN_START });
 
     axios
-      .post(`https://lambda-mud-test.herokuapp.com/api/login/`, user)
+      .post(`https://mud-cs23-backend.herokuapp.com/api/login/`, user)
       .then((res) => {
         console.log('LOGIN POST RESPONSE', res);
         localStorage.setItem('token', res.data.key);

@@ -9,7 +9,7 @@ export const register = (newUser) => {
     dispatch({ type: REGISTER_START });
 
     axios
-      .post(`https://lambda-mud-test.herokuapp.com/api/registration/`, newUser)
+      .post(`https://mud-cs23-backend.herokuapp.com/api/registration/`, newUser)
       .then((res) => {
         localStorage.setItem('token', res.data.key);
         dispatch({ type: REGISTER_SUCCESS, payload: res.data });
