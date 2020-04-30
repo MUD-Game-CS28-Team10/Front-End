@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { register } from '../actions';
+import { register } from '../actions/registrationActions';
 
 const LogInForm = (props) => {
   const [newUser, setNewUser] = useState({
@@ -32,9 +32,9 @@ const LogInForm = (props) => {
   return (
     <div className="login">
       <div className="login-body">
-        <div className="img-container">
+        {/* <div className="img-container">
           <img src="src/assets/cave.jpg" />
-        </div>
+        </div> */}
         <div className="form-container">
           <h1>Register for the Game!</h1>
           <form onSubmit={handleSubmit} method="POST">

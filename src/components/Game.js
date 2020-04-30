@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { initiateGame } from '../actions/gameActions';
 import NavBar from './NavBar';
 import RoomInfo from './RoomInfo';
 import Map from './Map';
 import PlayerList from './PlayerList';
 import CommandLine from './CommandLine';
 
-const Game = (props) => {
+const Game = props => {
+  useEffect(() => {
+    props.initiateGame();
+  }, []);
+
   return (
     <div className="game">
       <div className="header">
@@ -26,4 +32,10 @@ const Game = (props) => {
   );
 };
 
-export default Game;
+const mapStateToProps = state => {
+  return {
+    state: state
+  };
+};
+
+export default connect(mapStateToProps, { initiateGame })(Game);
