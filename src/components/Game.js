@@ -1,3 +1,5 @@
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/prop-types */
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { initiateGame } from '../actions/gameActions';
@@ -8,6 +10,7 @@ import PlayerList from './PlayerList';
 import CommandLine from './CommandLine';
 
 const Game = props => {
+
   useEffect(() => {
     props.initiateGame();
   }, []);
@@ -20,11 +23,18 @@ const Game = props => {
       </div>
 
       <div className="main-content">
-        <h1>This is the main-content div</h1>
+        <h1>The intrepid adventurer: {props.initData.name}</h1>
         <div className="main-row">
-          <RoomInfo />
-          <Map />
-          <PlayerList />
+          <RoomInfo
+            roomName={props.initData.title}
+            roomDesc={props.initData.description}
+          />
+          <Map
+            currentRoomNum={props.initData.curr_room}
+            currentX={props.initData.x_coord}
+            currentY={props.initData.y_coord} 
+          />
+          <PlayerList playersArray={props.initData.players}/>
         </div>
         <CommandLine />
       </div>
@@ -34,7 +44,7 @@ const Game = props => {
 
 const mapStateToProps = state => {
   return {
-    state: state
+    initData: state.gameReducer.initData
   };
 };
 

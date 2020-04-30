@@ -11,7 +11,7 @@ import {
 } from '../actions/gameActions';
 
 const initialState = {
-  data: {},
+  initData: {},
   isLoading: false,
   error: '',
 };
@@ -26,7 +26,7 @@ export const gameReducer = (state = initialState, action) => {
     case INIT_SUCCESS:
       return {
         ...state,
-        data: action.payload,
+        initData: action.payload,
         isLoading: false,
       };
     case INIT_FAILURE:
