@@ -5,6 +5,8 @@ import Login from './authentication/Login';
 import Registration from './authentication/Registration';
 import Game from './components/Game';
 
+import './index.scss';
+
 function App() {
   return (
     <div className="App">

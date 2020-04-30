@@ -8,11 +8,14 @@
 // Vendors
 // @import './stylesheets/vendors/bootstrap';
 
-// Reset, typography
+// Reset, typography, base styling
 @import './stylesheets/reset';
 @import './stylesheets/typography';
+@import './stylesheets/base';
 
 // Components
 @import './stylesheets/header';
-@import './stylesheets/footer';
-@import './stylesheets/navbar';
+// @import './stylesheets/navbar'; // In header
+@import './stylesheets/game';
+
+// @import './stylesheets/footer';

@@ -7,22 +7,22 @@ import CommandLine from './CommandLine';
 
 const Game = (props) => {
   return (
-    <>
+    <div className="game">
       <div className="header">
-        <div className="header">
-          <h1>This is the header. Check out the nav bar</h1>
-          <NavBar />
-        </div>
+        <h1>Lambda-MUD</h1>
+        <NavBar />
       </div>
 
       <div className="main-content">
         <h1>This is the main-content div</h1>
-        <RoomInfo />
-        <Map />
-        <PlayerList />
+        <div className="main-row">
+          <RoomInfo />
+          <Map />
+          <PlayerList />
+        </div>
         <CommandLine />
       </div>
-    </>
+    </div>
   );
 };
 
