@@ -1,17 +1,21 @@
 @charset 'utf-8';
 
 // Variables and functions
-@import './stylesheets/abstracts/variables';
-@import './stylesheets/abstracts/functions';
+@import './stylesheets/variables';
+// @import './stylesheets/functions';
+// @import './stylesheets/mixins';
 
 // Vendors
 // @import './stylesheets/vendors/bootstrap';
 
-// Reset, typography
+// Reset, typography, base styling
 @import './stylesheets/reset';
 @import './stylesheets/typography';
+@import './stylesheets/base';
 
 // Components
-@import './stylesheets/layout/header';
-@import './stylesheets/layout/footer';
-@import './stylesheets/layout/nav';
+@import './stylesheets/header';
+// @import './stylesheets/navbar'; // In header
+@import './stylesheets/game';
+
+// @import './stylesheets/footer';

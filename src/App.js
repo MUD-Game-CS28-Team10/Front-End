@@ -6,6 +6,8 @@ import Registration from './authentication/Registration';
 import Game from './components/Game';
 import PrivateRoute from './utils/PrivateRoute'
 
+import './index.scss';
+
 function App() {
   return (
     <div className="App">
