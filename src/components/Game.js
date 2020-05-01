@@ -8,35 +8,38 @@ import RoomInfo from './RoomInfo';
 import Map from './Map';
 import PlayerList from './PlayerList';
 import CommandLine from './CommandLine';
+import JoyStick from './JoyStick';
 
 const Game = props => {
 
   useEffect(() => {
     props.initiateGame();
-  }, []);
+  }, [props.newRoomData]);
 
   return (
     <div className="game">
       <div className="header">
         <h1>Lambda-MUD</h1>
-        <NavBar />
+        <NavBar player={props.initData.name}/>
       </div>
 
       <div className="main-content">
-        <h1>The intrepid adventurer: {props.initData.name}</h1>
         <div className="main-row">
           <RoomInfo
             roomName={props.initData.title}
             roomDesc={props.initData.description}
           />
           <Map
-            currentRoomNum={props.initData.curr_room}
-            currentX={props.initData.x_coord}
-            currentY={props.initData.y_coord} 
+            initRoomNum={props.initData.curr_room}
+            initX={props.initData.x_coord}
+            initY={props.initData.y_coord} 
           />
           <PlayerList playersArray={props.initData.players}/>
         </div>
+        <div className="bottom-row">
+        <JoyStick />
         <CommandLine />
+        </div>
       </div>
     </div>
   );
@@ -44,7 +47,8 @@ const Game = props => {
 
 const mapStateToProps = state => {
   return {
-    initData: state.gameReducer.initData
+    initData: state.gameReducer.initData,
+    newRoomData: state.gameReducer.newRoomData
   };
 };
 

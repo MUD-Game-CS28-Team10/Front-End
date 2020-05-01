@@ -1,14 +1,15 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import { Title, Content } from '../styledComponents/styles';
 
-const PlayerList = props => {
+const PlayerList = (props) => {
   const { playersArray } = props;
 
-  console.log('PlayersArray', playersArray)
+  console.log('PlayersArray', playersArray);
 
   return (
     <div className="player-list">
-      <h2>Player List</h2>
+      <Title>Player List</Title>
       {/* {playersArray.map(player => (
         <h4>{player}</h4>
       ))} */}
