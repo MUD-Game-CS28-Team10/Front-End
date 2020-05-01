@@ -15,6 +15,8 @@ const Game = props => {
     props.initiateGame();
   }, [props.newRoomData]);
 
+  console.log('CurrentRoom', props.initData.curr_room);
+
   return (
     <div className="game">
       <div className="header">
@@ -27,6 +29,9 @@ const Game = props => {
           <RoomInfo
             roomName={props.initData.title}
             roomDesc={props.initData.description}
+            initRoomNum={props.initData.curr_room}
+            initX={props.initData.x_coord}
+            initY={props.initData.y_coord}
           />
           <Map
             initRoomNum={props.initData.curr_room}

@@ -33,7 +33,7 @@ export const getMap = () => {
     axioswithauth()
       .get(`/adv/get_map`)
       .then(res => {
-        console.log('MAP RESPONSE', res);
+        // console.log('MAP RESPONSE', res);
         dispatch({ type: MAP_SUCCESS, payload: res.data });
       })
       .catch(err => {
