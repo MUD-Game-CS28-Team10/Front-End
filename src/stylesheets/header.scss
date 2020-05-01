@@ -1,12 +1,12 @@
 .header {
-  color: #8cc0fc;
+  color: $text-blue;
   background: black;
   padding: 2rem;
 
-  border-bottom: 2px solid #8cc0fc;
+  border-bottom: 2px solid $text-blue;
 }
 
 .navbar {
-  color: #8cc0fc;
+  color: $text-blue;
   padding: 0.3rem;
 }

@@ -9,9 +9,9 @@ const PlayerList = (props) => {
 
   return (
     <div className="player-list">
-      <Title>Player List</Title>
+      <h2>Player List</h2>
       {props.playersArray && props.playersArray.map(player => (
-        <Content>{player}</Content>
+        <p>{player}</p>
       ))}
     </div>
   );
