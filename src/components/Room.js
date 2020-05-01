@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import classNames from 'classnames';
 
 const Room = ({
   n_to,
@@ -12,12 +12,21 @@ const Room = ({
   currRoom
   }) => {
 
+
+// <div className={`room ${n_to?"north":""} ${s_to?"south":""} ${w_to?"west":""} ${e_to?"east":""}`}
   
   return (
-    <div>
-      {id}
-      <p>{n_to ?'N':''}{s_to ?'S':''}{w_to ?'W':''}{e_to ?'E':''}</p>
-
+    <div
+      className={classNames({
+        room: true,
+        north: n_to ? false : true,
+        south: s_to ? false : true,
+        west: w_to ? false : true,
+        east: e_to ? false : true,
+      })}    
+    >
+      <div className="player"><h1>{id === currRoom ? "🧙‍♂️" : ""}</h1></div>
+      
     </div>
   );
 };

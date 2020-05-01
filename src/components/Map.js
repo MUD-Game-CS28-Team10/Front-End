@@ -45,19 +45,24 @@ const Map = props => {
   }, [coords, props.roomsArray]);
 
   return (
-    <div className='map'>
+    <div className="map">
       <StyledMap>
         {visibleRooms.map(room => (
-          <Room {...room} key={`${room.x_coord} + ${room.y_coord}`} currRoom={props.initData.curr_room}/>
+          <Room
+            {...room}
+            key={`${room.x_coord} + ${room.y_coord}`}
+            currRoom={props.initData.curr_room}
+          />
         ))}
       </StyledMap>
     </div>
   );
 };
 
+// The full map grid
 const StyledMap = styled.div`
-  width: 640px;
-  height: 640px;
+  height: 100%;
+  width: 75%;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: auto;

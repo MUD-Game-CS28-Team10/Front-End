@@ -3,28 +3,28 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logIn } from '../actions/loginActions';
 
-const LogInForm = (props) => {
+const LogInForm = props => {
   console.log('LOGIN FORM PROPS', props);
   const [user, setUser] = useState({
     username: '',
-    password: '',
+    password: ''
   });
 
-  const handleChange = (e) => {
+  const handleChange = e => {
     setUser({
       ...user,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     });
     e.target.focus();
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
     props.logIn(user, props.history);
     // reset form to blank below
     setUser({
       username: '',
-      password: '',
+      password: ''
     });
   };
 
@@ -73,10 +73,10 @@ const LogInForm = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     loggedIn: state.loginReducer.loggedIn,
-    isLoading: state.loginReducer.isLoading,
+    isLoading: state.loginReducer.isLoading
   };
 };
 

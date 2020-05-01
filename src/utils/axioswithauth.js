@@ -6,11 +6,12 @@ const axiosWithAuth = () => {
   return axios.create({
     baseURL: 'https://mud-cs23-backend.herokuapp.com/api',
     headers: {
-      Authorization: `Token ${token}`,
-    },
+      Authorization: `Token ${token}`
+    }
   });
 };
 
 export default axiosWithAuth;
 
-//local:   http://localhost:8000/api
+// Local:   http://localhost:8000/api
+// Test Server: https://lambda-mud-test.herokuapp.com/api

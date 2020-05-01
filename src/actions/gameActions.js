@@ -57,3 +57,19 @@ export const playerMove = move => {
       });
   };
 };
+
+export const playerCommand = command => {
+  return dispatch => {
+    dispatch({ type: MOVE_START });
+
+    axioswithauth()
+      .post(`/adv/move`, { direction: command })
+      .then(res => {
+        console.log('MOVE RESPONSE', res);
+        dispatch({ type: MOVE_SUCCESS, payload: res.data });
+      })
+      .catch(err => {
+        dispatch({ type: MOVE_FAILURE, payload: err });
+      });
+  };
+};
