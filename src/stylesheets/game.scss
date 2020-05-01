@@ -7,7 +7,8 @@
   display: flex;
   flex-direction: row;
 
-  min-height: 30rem;
+  // min-height: 30rem;
+  height: 50rem;
 }
 
 .bottom-row {
@@ -29,7 +30,7 @@
 }
 
 .map {
-  width: 64%;
+  width: 70%;
 }
 
 .room-info,
@@ -43,5 +44,5 @@
 }
 
 .command-line {
-  width: 80%;
+  width: 85%;
 }

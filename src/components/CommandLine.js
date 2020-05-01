@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { playerCommand } from '../actions/gameActions';
 
 const CommandLine = (props) => {
-  console.log('COMMAND LINE PROPS', props);
   const [command, setCommand] = useState({
     command: '',
   });
@@ -48,8 +47,7 @@ const CommandLine = (props) => {
 const mapStateToProps = (state) => {
   return {
     // TODO: Placeholder
-    // loggedIn: state.loginReducer.loggedIn,
-    // isLoading: state.loginReducer.isLoading
+    // localVar: state.whichReducer.varName,
   };
 };
 
