@@ -59,6 +59,7 @@ const Map = props => {
   );
 };
 
+// The full map grid
 const StyledMap = styled.div`
   height: 100%;
   width: 75%;
