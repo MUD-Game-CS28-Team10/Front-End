@@ -4,13 +4,14 @@ import React from 'react';
 import { Title, Content } from '../styledComponents/styles';
 
 const RoomInfo = props => {
-  const { roomName, roomDesc } = props;
+  const { roomName, roomDesc, initX, initY, initRoomNum } = props;
 
   return (
     <div className="room-info">
-      <Title>Room</Title>
-      <Content>You are currently in the {roomName}.</Content>
-      <Content>As you look around you see: </Content>
+      <Title>{roomName}</Title>
+      <Content>
+        {initRoomNum}: ({initX}, {initY})
+      </Content>
       <Content>{roomDesc}</Content>
     </div>
   );

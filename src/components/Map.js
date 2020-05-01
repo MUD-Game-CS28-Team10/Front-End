@@ -9,9 +9,7 @@ import Room from './Room';
 const Map = props => {
   const { initRoomNum, initX, initY } = props;
 
-  console.log("InitX, InitY", initX, initY)
-
-  // console.log("MAPDATA", props.mapData)
+  console.log('InitX, InitY', initX, initY);
 
   useEffect(() => {
     props.getMap();
@@ -19,9 +17,9 @@ const Map = props => {
 
   const [coords, setCoords] = useState({
     x_min: 0,
-    x_max: 9,
+    x_max: 4,
     y_min: 0,
-    y_max: 9,
+    y_max: 4
   });
   const [visibleRooms, setVisibleRooms] = useState([]);
 
@@ -29,12 +27,12 @@ const Map = props => {
     let x_min = Math.floor(initX / 5) * 5;
     let y_min = Math.floor(initY / 5) * 5;
     if (x_min !== coords.x_min || y_min !== coords.y_min) {
-    setCoords({ x_min, x_max: x_min + 9, y_min, y_max: y_min + 9 });
+      setCoords({ x_min, x_max: x_min + 4, y_min, y_max: y_min + 4 });
     }
   }, [initX, initY, coords.x_min, coords.y_min]);
 
   useEffect(() => {
-    if (props.roomsArray){
+    if (props.roomsArray) {
       let filtered = props.roomsArray.filter(room => {
         if (room.x_coord >= coords.x_min && room.x_coord <= coords.x_max) {
           if (room.y_coord >= coords.y_min && room.y_coord <= coords.y_max) {
@@ -43,26 +41,23 @@ const Map = props => {
         }
       });
       setVisibleRooms(filtered);
-    };
+    }
   }, [coords, props.roomsArray]);
 
   return (
     <StyledMap>
       {visibleRooms.map(room => (
-        <Room
-          {...room}
-          key={`${room.x_coord} + ${room.y_coord}`}
-        />
+        <Room {...room} key={`${room.x_coord} + ${room.y_coord}`} />
       ))}
     </StyledMap>
-    );
+  );
 };
 
 const StyledMap = styled.div`
   width: 640px;
   height: 640px;
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-template-rows: auto;
 `;
 
