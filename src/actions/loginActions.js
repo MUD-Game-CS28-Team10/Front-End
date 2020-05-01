@@ -8,15 +8,17 @@ export const LOGIN_FAILURE = 'LOGIN_FAILURE';
 // export const LOGOUT_FAILURE = 'LOGOUT_FAILURE';
 
 export const logIn = (user, history) => {
+
   return (dispatch) => {
     dispatch({ type: LOGIN_START });
 
     axios
-      .post(`https://lambda-mud-test.herokuapp.com/api/login/`, user)
+      .post(`https://mud-cs23-backend.herokuapp.com/api/login/`, user)
       .then((res) => {
         console.log('LOGIN POST RESPONSE', res);
         localStorage.setItem('token', res.data.key);
         dispatch({ type: LOGIN_SUCCESS, payload: res.data });
+        history.push('/game');
       })
       .catch((err) => {
         dispatch({ type: LOGIN_FAILURE, payload: err });

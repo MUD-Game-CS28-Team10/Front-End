@@ -20,7 +20,7 @@ const LogInForm = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.register(newUser);
+    props.register(newUser, props.history);
     //reset form to blank below
     setNewUser({
       username: '',
@@ -74,7 +74,7 @@ const LogInForm = (props) => {
             </fieldset>
             <div className="login">
               <p>Need to Login?</p>
-              <Link className="reg-link" to="/login">
+              <Link className="reg-link" to="/">
                 Login
               </Link>
             </div>

@@ -10,11 +10,17 @@
   min-height: 30rem;
 }
 
+.bottom-row {
+  display: flex;
+  flex-direction: row;
+}
+
 .room-info,
 .map,
 .player-list,
-.command-line {
-  border: 2px solid goldenrod;
+.command-line,
+.joystick {
+  border: 2px solid black;
   border-radius: 10px;
 
   min-height: 8rem;
@@ -23,10 +29,19 @@
 }
 
 .map {
-  width: 50%;
+  width: 64%;
 }
 
 .room-info,
 .player-list {
-  width: 25%;
+  width: 15%;
+}
+
+.joystick {
+  width: 15%;
+  background: black;
+}
+
+.command-line {
+  width: 80%;
 }

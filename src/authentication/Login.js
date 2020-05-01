@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { logIn } from '../actions/loginActions';
 
 const LogInForm = props => {
+  console.log('LOGIN FORM PROPS', props);
   const [user, setUser] = useState({
     username: '',
     password: ''
@@ -19,8 +20,7 @@ const LogInForm = props => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    props.logIn(user);
-
+    props.logIn(user, props.history);
     // reset form to blank below
     setUser({
       username: '',
@@ -75,7 +75,8 @@ const LogInForm = props => {
 
 const mapStateToProps = state => {
   return {
-    state: state
+    loggedIn: state.loginReducer.loggedIn,
+    isLoading: state.loginReducer.isLoading
   };
 };
 
