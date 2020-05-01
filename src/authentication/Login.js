@@ -1,34 +1,32 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { logIn } from '../actions/loginActions'
+import { logIn } from '../actions/loginActions';
 
-const LogInForm = (props) => {
+const LogInForm = props => {
   const [user, setUser] = useState({
     username: '',
-    password: '',
+    password: ''
   });
 
-
-  const handleChange = (e) => {
+  const handleChange = e => {
     setUser({
       ...user,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     });
     e.target.focus();
   };
 
+  const handleSubmit = e => {
+    e.preventDefault();
+    props.logIn(user);
 
-const handleSubmit = (e) => {
-  e.preventDefault();
-  props.logIn(user);
-  
-  //reset form to blank below
-  setUser({
-    username: '',
-    password: '',
-  });
-}
+    // reset form to blank below
+    setUser({
+      username: '',
+      password: ''
+    });
+  };
 
   return (
     <div className="login">
@@ -60,9 +58,7 @@ const handleSubmit = (e) => {
                 value={user.password}
                 required
               />
-              <button type="submit" >
-                Sign in
-              </button>
+              <button type="submit">Sign in</button>
             </fieldset>
             <div className="register">
               <p>Don't have an account?</p>
@@ -80,7 +76,7 @@ const handleSubmit = (e) => {
 const mapStateToProps = state => {
   return {
     state: state
-  }
-}
+  };
+};
 
 export default connect(mapStateToProps, { logIn })(LogInForm);

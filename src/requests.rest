@@ -26,6 +26,7 @@ Authorization: Token 626a1a9d5ab38fe08f0bab5d5b75f13fb36a12d0
 ### Move
 POST https://lambda-mud-test.herokuapp.com/api/adv/move/
 Authorization: Token 626a1a9d5ab38fe08f0bab5d5b75f13fb36a12d0
+Referer: https://lambda-mud-test.herokuapp.com/api/adv/init/
 Content-Type: Application/json
 
 {
@@ -51,17 +52,17 @@ POST http://localhost:8000/api/login/
 Content-Type: Application/json
 
 {
-  "username":"testuser",
-  "password":"testpassword"
+  "username":"vanilla",
+  "password":"iceicebaby"
 }
 
 ### Initialize
 GET http://localhost:8000/api/adv/init/
-Authorization: Token 626a1a9d5ab38fe08f0bab5d5b75f13fb36a12d0
+Authorization: Token e839111f32e67cff6a15a2b4739e8802831cdb0f
 
 ### Move
 POST http://localhost:8000/api/adv/move/
-Authorization: Token 626a1a9d5ab38fe08f0bab5d5b75f13fb36a12d0
+Authorization: Token e839111f32e67cff6a15a2b4739e8802831cdb0f
 Content-Type: Application/json
 
 {
