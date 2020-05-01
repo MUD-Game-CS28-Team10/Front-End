@@ -3,16 +3,16 @@ import React from 'react';
 import { Title, Content } from '../styledComponents/styles';
 
 const PlayerList = (props) => {
-  const { playersArray } = props;
+  // const { playersArray } = props;
 
-  console.log('PlayersArray', playersArray);
+  console.log('PlayersArray', props.playersArray);
 
   return (
     <div className="player-list">
       <Title>Player List</Title>
-      {/* {playersArray.map(player => (
-        <h4>{player}</h4>
-      ))} */}
+      {props.playersArray && props.playersArray.map(player => (
+        <Content>{player}</Content>
+      ))}
     </div>
   );
 };

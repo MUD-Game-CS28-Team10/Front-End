@@ -11,16 +11,17 @@ import CommandLine from './CommandLine';
 import JoyStick from './JoyStick';
 
 const Game = props => {
-
   useEffect(() => {
     props.initiateGame();
   }, [props.newRoomData]);
+
+  console.log('CurrentRoom', props.initData.curr_room);
 
   return (
     <div className="game">
       <div className="header">
         <h1>Lambda-MUD</h1>
-        <NavBar player={props.initData.name}/>
+        <NavBar player={props.initData.name} />
       </div>
 
       <div className="main-content">
@@ -28,17 +29,20 @@ const Game = props => {
           <RoomInfo
             roomName={props.initData.title}
             roomDesc={props.initData.description}
+            initRoomNum={props.initData.curr_room}
+            initX={props.initData.x_coord}
+            initY={props.initData.y_coord}
           />
           <Map
             initRoomNum={props.initData.curr_room}
             initX={props.initData.x_coord}
-            initY={props.initData.y_coord} 
+            initY={props.initData.y_coord}
           />
-          <PlayerList playersArray={props.initData.players}/>
+          <PlayerList playersArray={props.initData.players} />
         </div>
         <div className="bottom-row">
-        <JoyStick />
-        <CommandLine />
+          <JoyStick />
+          <CommandLine />
         </div>
       </div>
     </div>
