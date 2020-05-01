@@ -60,8 +60,8 @@ const Map = props => {
 };
 
 const StyledMap = styled.div`
-  width: 640px;
-  height: 640px;
+  height: 100%;
+  width: 75%;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: auto;

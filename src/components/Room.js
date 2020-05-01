@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 
 const Room = ({
   n_to,
@@ -16,7 +15,10 @@ const Room = ({
   return (
     <div>
       {id}
-      <p>{n_to ?'N':''}{s_to ?'S':''}{w_to ?'W':''}{e_to ?'E':''}</p>
+      <p>{n_to ?'N':''}{s_to ?'S':''}{w_to ?'W':''}{e_to ?'E':''}<br />
+         {id === currRoom ? "🧙‍♂️" : ""}
+      </p>
+
 
     </div>
   );
