@@ -7,9 +7,7 @@ import { getMap } from '../actions/gameActions';
 import Room from './Room';
 
 const Map = props => {
-  const { initRoomNum, initX, initY } = props;
-
-  console.log('InitX, InitY', initX, initY);
+  const { initX, initY } = props;
 
   useEffect(() => {
     props.getMap();
@@ -33,7 +31,7 @@ const Map = props => {
 
   useEffect(() => {
     if (props.roomsArray) {
-      let filtered = props.roomsArray.filter(room => {
+      const filtered = props.roomsArray.filter(room => {
         if (room.x_coord >= coords.x_min && room.x_coord <= coords.x_max) {
           if (room.y_coord >= coords.y_min && room.y_coord <= coords.y_max) {
             return room;

@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { logIn } from '../actions/loginActions';
 
 const LogInForm = props => {
-  console.log('LOGIN FORM PROPS', props);
   const [user, setUser] = useState({
     username: '',
     password: ''

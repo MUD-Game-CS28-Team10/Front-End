@@ -17,7 +17,6 @@ export const initiateGame = () => {
     axioswithauth()
       .get(`/adv/init`)
       .then(res => {
-        console.log('INIT RESPONSE', res);
         dispatch({ type: INIT_SUCCESS, payload: res.data });
       })
       .catch(err => {
@@ -33,7 +32,6 @@ export const getMap = () => {
     axioswithauth()
       .get(`/adv/get_map`)
       .then(res => {
-        // console.log('MAP RESPONSE', res);
         dispatch({ type: MAP_SUCCESS, payload: res.data });
       })
       .catch(err => {
@@ -49,7 +47,6 @@ export const playerMove = move => {
     axioswithauth()
       .post(`/adv/move`, move)
       .then(res => {
-        console.log('MOVE RESPONSE', res);
         dispatch({ type: MOVE_SUCCESS, payload: res.data });
       })
       .catch(err => {
@@ -65,7 +62,6 @@ export const playerCommand = command => {
     axioswithauth()
       .post(`/adv/move`, { direction: command })
       .then(res => {
-        console.log('MOVE RESPONSE', res);
         dispatch({ type: MOVE_SUCCESS, payload: res.data });
       })
       .catch(err => {

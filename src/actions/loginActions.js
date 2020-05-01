@@ -15,7 +15,6 @@ export const logIn = (user, history) => {
     axios
       .post(`https://mud-cs23-backend.herokuapp.com/api/login/`, user)
       .then((res) => {
-        console.log('LOGIN POST RESPONSE', res);
         localStorage.setItem('token', res.data.key);
         dispatch({ type: LOGIN_SUCCESS, payload: res.data });
         history.push('/game');
