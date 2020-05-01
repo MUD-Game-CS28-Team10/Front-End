@@ -9,6 +9,7 @@ const Room = ({
   id,
   x_coord,
   y_coord,
+  currRoom
   }) => {
 
   

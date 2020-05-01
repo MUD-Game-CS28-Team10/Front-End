@@ -45,11 +45,13 @@ const Map = props => {
   }, [coords, props.roomsArray]);
 
   return (
-    <StyledMap>
-      {visibleRooms.map(room => (
-        <Room {...room} key={`${room.x_coord} + ${room.y_coord}`} />
-      ))}
-    </StyledMap>
+    <div className='map'>
+      <StyledMap>
+        {visibleRooms.map(room => (
+          <Room {...room} key={`${room.x_coord} + ${room.y_coord}`} currRoom={props.initData.curr_room}/>
+        ))}
+      </StyledMap>
+    </div>
   );
 };
 
