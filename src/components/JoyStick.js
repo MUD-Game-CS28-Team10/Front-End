@@ -6,23 +6,6 @@ import styled from 'styled-components';
 
 const JoyStick = (props) => {
 
-  // const handleMove = async choice => {
-    // const getChoice = choice => {
-    //   switch(choice) {
-    //     case 'n':
-    //       return currentRoom.n_to;
-    //     case 'e':
-    //       return currentRoom.e_to;
-    //     case 's':
-    //       return currentRoom.s_to;
-    //     case 'w':
-    //       return currentRoom.w_to;
-    //     default:
-    //       return null
-    //   }
-    // }
-  // }
-
   const handleNorth = () => {
     props.playerMove({'direction': 'n'})
   };

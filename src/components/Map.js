@@ -9,7 +9,9 @@ import Room from './Room';
 const Map = props => {
   const { initRoomNum, initX, initY } = props;
 
-  console.log("MAPDATA", props.mapData)
+  console.log("InitX, InitY", initX, initY)
+
+  // console.log("MAPDATA", props.mapData)
 
   useEffect(() => {
     props.getMap();
@@ -17,9 +19,9 @@ const Map = props => {
 
   const [coords, setCoords] = useState({
     x_min: 0,
-    x_max: 4,
+    x_max: 9,
     y_min: 0,
-    y_max: 4,
+    y_max: 9,
   });
   const [visibleRooms, setVisibleRooms] = useState([]);
 
@@ -27,7 +29,7 @@ const Map = props => {
     let x_min = Math.floor(initX / 5) * 5;
     let y_min = Math.floor(initY / 5) * 5;
     if (x_min !== coords.x_min || y_min !== coords.y_min) {
-    setCoords({ x_min, x_max: x_min + 4, y_min, y_max: y_min + 4 });
+    setCoords({ x_min, x_max: x_min + 9, y_min, y_max: y_min + 9 });
     }
   }, [initX, initY, coords.x_min, coords.y_min]);
 
@@ -60,7 +62,7 @@ const StyledMap = styled.div`
   width: 640px;
   height: 640px;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(10, 1fr);
   grid-template-rows: auto;
 `;
 

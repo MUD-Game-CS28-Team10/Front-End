@@ -16,6 +16,8 @@ const Game = props => {
     props.initiateGame();
   }, [props.newRoomData]);
 
+  console.log("CurrentRoom", props.initData.curr_room)
+
   return (
     <div className="game">
       <div className="header">
